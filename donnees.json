@@ -592,5 +592,131 @@
    "Auxerre",
    "D"
   ]
- ]
+ ],
+ "cibles": {
+  "recherche": "Plus fort potentiel (base de données, tri par potentiel)",
+  "date": "20/12/2027",
+  "joueurs": [
+   [
+    "Djibril Ouziad",
+    "Le Havre",
+    18,
+    "D (DG), AL (D)",
+    "France",
+    2.5,
+    4.5,
+    "35M € - 51M €",
+    "31K € - 36K €",
+    "A · Excellent"
+   ],
+   [
+    "Samuele Inácio",
+    "Dortmund",
+    19,
+    "M (C), MO (DGC)",
+    "Italie",
+    3,
+    4.5,
+    "20M € - 29M €",
+    "172K € - 221K €",
+    "A+ · Priorité"
+   ],
+   [
+    "Gabriel Mec",
+    "Porto",
+    19,
+    "MO (DGC)",
+    "Brésil",
+    2,
+    4.5,
+    "45M € - 54M €",
+    "115K € - 153K €",
+    "A+ · Priorité"
+   ],
+   [
+    "Antonio Arena",
+    "Cardiff",
+    18,
+    "BT (C)",
+    "Italie",
+    2,
+    4.5,
+    "Pas à vendre",
+    "49K € - 58,5K €",
+    "A · Excellent"
+   ],
+   [
+    "Sam Amo-Ameyaw",
+    "Strasbourg",
+    21,
+    "M (D), MO (DG), BT (C)",
+    "Angleterre",
+    3,
+    4.5,
+    "24M € - 29M €",
+    "102K € - 118K €",
+    "A · Excellent"
+   ],
+   [
+    "Alisson",
+    "Shakhtar",
+    22,
+    "M/MO (D)",
+    "Brésil",
+    3,
+    4.5,
+    "27M €",
+    "72K € - 91,5K €",
+    "A · Excellent"
+   ],
+   [
+    "Pascal Struijk",
+    "Brighton",
+    28,
+    "D (GC)",
+    "Belgique",
+    3.5,
+    4.5,
+    "14,5M € - 24M €",
+    "252K € - 404K €",
+    "A- · Fantastique"
+   ],
+   [
+    "Sampson Dweh",
+    "Viktoria Plzeň",
+    26,
+    "D (C)",
+    "États-Unis",
+    3.5,
+    4.5,
+    "Inconnu",
+    "13,75K € - 21,5K €",
+    "B+ · Superbe"
+   ],
+   [
+    "Yari Vanderhallen",
+    "MVV Maastricht",
+    18,
+    "BT (C)",
+    "Belgique",
+    1.5,
+    4.5,
+    "550K € - 7,4M €",
+    "4,8K € - 6,25K €",
+    "B+ · Superbe"
+   ],
+   [
+    "Martinelli",
+    "Fluminense",
+    26,
+    "MD, M (C)",
+    "Brésil",
+    3.5,
+    4.5,
+    "14,5M € - 19,5M €",
+    "75,5K € - 121K €",
+    "A- · Fantastique"
+   ]
+  ]
+ }
 }

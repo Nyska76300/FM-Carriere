@@ -86,6 +86,11 @@
   <input type="search" id="filtre" placeholder="Rechercher un joueur, un poste, un pays…">
   <div class="tableau"><table id="table"><thead></thead><tbody></tbody></table></div>
 
+  <h2>Cibles mercato</h2>
+  <div class="sous" id="cibles-info" style="color:var(--doux);margin-bottom:10px"></div>
+  <input type="search" id="filtre-cibles" placeholder="Filtrer les cibles…">
+  <div class="tableau"><table id="cibles"><thead></thead><tbody></tbody></table></div>
+
   <h2>Finances</h2>
   <div class="deux" id="finances"></div>
 </main>
@@ -137,6 +142,25 @@ fetch('donnees.json?v=' + Date.now()).then(r => r.json()).then(D => {
       c.forEach((v, i) => { const x = r.insertCell(); x.textContent = (i === 5 && v > 0 ? '+' : '') + v; if (i !== 1) x.className = 'num'; }); });
   }
   (D.calendrier || []).forEach(([dt, adv, lieu]) => { const l = el('div', undefined, 'ligne'); l.append(el('span', (lieu === 'D' ? 'vs ' : '@ ') + adv), el('span', dt + (lieu === 'D' ? ' · Domicile' : ' · Extérieur'))); $('calendrier').append(l); });
+
+  // Cibles mercato
+  if (D.cibles) {
+    $('cibles-info').textContent = D.cibles.recherche + ' · ' + D.cibles.date + ' · prix et salaires estimés par tes recruteurs';
+    const CC = ['Joueur','Club','Âge','Poste','Nation','Niveau','Potentiel','Prix','Salaire / mois','Avis recruteurs'];
+    let tc = null, dc = false;
+    const aff = () => {
+      const f = $('filtre-cibles').value.trim().toLowerCase();
+      let L = D.cibles.joueurs.filter(j => !f || j.join(' ').toLowerCase().includes(f));
+      if (tc !== null) L = [...L].sort((a, b) => { const x = tc === 7 ? valeurMin(a[7]) : a[tc], y = tc === 7 ? valeurMin(b[7]) : b[tc];
+        const r = typeof x === 'number' ? x - y : String(x).localeCompare(String(y), 'fr'); return dc ? -r : r; });
+      const t = $('cibles'); t.tHead.innerHTML = ''; const hr = t.tHead.insertRow();
+      CC.forEach((n, i) => { const h = el('th', n, i === tc ? 'tri' + (dc ? ' desc' : '') : ''); h.onclick = () => { dc = tc === i ? !dc : true; tc = i; aff(); }; hr.append(h); });
+      const b = t.tBodies[0]; b.innerHTML = '';
+      L.forEach(j => { const r = b.insertRow(); j.forEach((v, i) => { const x = r.insertCell(); x.textContent = (i === 5 || i === 6) ? etoiles(v) : v; if (i === 5 || i === 6) x.className = 'etoiles'; if (i === 2) x.className = 'num'; }); });
+    };
+    $('filtre-cibles').oninput = aff; aff();
+  }
+
   if (D.budget) {
     const B = D.budget;
     [['Budget transferts', B.transferts_dispo, 'Dépensé cette saison : ' + B.transferts_depenses], ['Budget salarial disponible', B.salaires_dispo, 'Dépenses salariales : ' + B.salaires_depenses]]
