@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ma carrière – Football Manager</title>
 <style>
-  :root { --c1:#1f8f4e; --c2:#f2c230; --fond:#0e1512; --carte:#16211c; --ligne:#24332b; --texte:#e8efe9; --doux:#93a89b; --rouge:#e5534b; }
+  :root { --c1:#2aa8e0; --c2:#7fd3f7; --c3:#0b2f52; --fond:#0b1520; --carte:#13202d; --ligne:#22344a; --texte:#eef4fa; --doux:#93a6ba; --rouge:#e5534b; }
   * { box-sizing:border-box; }
   body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--fond); color:var(--texte); }
   .wrap { max-width:1100px; margin:0 auto; padding:0 18px; }
   header { padding:32px 0 26px; border-bottom:4px solid var(--c2);
-    background: repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 60px,transparent 60px 120px), linear-gradient(135deg,var(--c1),#0b3a22); }
+    background: repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 60px,transparent 60px 120px), linear-gradient(135deg,var(--c1),var(--c3)); }
   .jeu { font-size:.78rem; letter-spacing:.15em; text-transform:uppercase; opacity:.85; }
   h1 { margin:6px 0 4px; font-size:clamp(1.9rem,6vw,2.9rem); }
   .sous { opacity:.85; font-size:.95rem; }
@@ -20,7 +20,7 @@
   .tuile b { display:block; font-size:1.6rem; font-variant-numeric:tabular-nums; }
   .tuile span { color:var(--doux); font-size:.85rem; }
   .onze { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; }
-  .joueur { background:var(--carte); border:1px solid var(--ligne); border-left:4px solid var(--c1); border-radius:10px; padding:10px 12px; }
+  .joueur { background:var(--carte); border:1px solid var(--ligne); border-left:4px solid var(--c2); border-radius:10px; padding:10px 12px; }
   .joueur .p { color:var(--doux); font-size:.8rem; }
   .joueur .n { font-weight:600; margin:2px 0; }
   .joueur .r { color:var(--c2); font-variant-numeric:tabular-nums; font-weight:600; }
@@ -31,17 +31,17 @@
   .carte li { display:flex; justify-content:space-between; gap:10px; padding:7px 0; border-top:1px solid var(--ligne); }
   .carte li:first-child { border-top:0; }
   .carte li span:last-child { color:var(--c2); font-variant-numeric:tabular-nums; white-space:nowrap; }
-  .tag { display:inline-block; font-size:.72rem; font-weight:700; padding:1px 6px; border-radius:4px; background:#2c3d34; color:var(--texte); margin-left:6px; vertical-align:middle; }
+  .tag { display:inline-block; font-size:.72rem; font-weight:700; padding:1px 6px; border-radius:4px; background:#2a3f55; color:var(--texte); margin-left:6px; vertical-align:middle; }
   .tag.Bls { background:var(--rouge); } .tag.Prm { background:#3fae5b; } .tag.Rep { background:#d9822b; }
   input[type=search] { width:100%; max-width:320px; background:var(--carte); border:1px solid var(--ligne); color:var(--texte); padding:9px 12px; border-radius:8px; font:inherit; margin-bottom:10px; }
   .tableau { overflow-x:auto; border:1px solid var(--ligne); border-radius:12px; }
   table { border-collapse:collapse; width:100%; font-size:.88rem; }
   th,td { padding:8px 10px; text-align:left; white-space:nowrap; border-bottom:1px solid var(--ligne); }
-  th { background:#1c2a23; cursor:pointer; user-select:none; position:sticky; top:0; }
+  th { background:#18293a; cursor:pointer; user-select:none; position:sticky; top:0; }
   th:hover { color:var(--c2); }
   th.tri::after { content:" ▲"; color:var(--c2); } th.tri.desc::after { content:" ▼"; }
   tbody tr:nth-child(even) { background:rgba(255,255,255,.02); }
-  tbody tr:hover { background:rgba(242,194,48,.08); }
+  tbody tr:hover { background:rgba(127,211,247,.08); }
   .num { text-align:right; font-variant-numeric:tabular-nums; }
   .etoiles { color:var(--c2); letter-spacing:1px; }
   .bientot { color:var(--rouge); font-weight:600; }
