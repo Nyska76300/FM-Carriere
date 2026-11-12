@@ -1,0 +1,30 @@
+{
+  "club": "Ma carrière",
+  "saison": "",
+  "jeu": "Football Manager 27",
+  "maj": "12/11/2026",
+  "joueurs": [
+    {"statut": "XI", "tag": "",    "note": 6.91, "nom": "Marcin Bułka",        "age": 28, "poste": "GB",              "nation": "Pologne",    "niveau": 2.5, "potentiel": 2.5, "valeur": "3,4M € - 7,2M €",   "salaire": 334, "contrat": 2031},
+    {"statut": "XI", "tag": "",    "note": 6.88, "nom": "Tiago Gabriel",       "age": 22, "poste": "D (C)",           "nation": "Portugal",   "niveau": 3,   "potentiel": 4,   "valeur": "32M € - 41M €",     "salaire": 105, "contrat": 2032},
+    {"statut": "XI", "tag": "",    "note": 6.96, "nom": "Nayef Aguerd",        "age": 31, "poste": "D (C)",           "nation": "Maroc",      "niveau": 3,   "potentiel": 3,   "valeur": "9,4M € - 11M €",    "salaire": 409, "contrat": 2030},
+    {"statut": "XI", "tag": "",    "note": 7.08, "nom": "Jorge Herrando",      "age": 26, "poste": "D (C)",           "nation": "Espagne",    "niveau": 2.5, "potentiel": 3,   "valeur": "5,2M € - 7,2M €",   "salaire": 86,  "contrat": 2030},
+    {"statut": "XI", "tag": "Rep", "note": 6.73, "nom": "Íñigo Arguibide",     "age": 22, "poste": "D/AL/M/M…",       "nation": "Espagne",    "niveau": 2,   "potentiel": 2.5, "valeur": "1,1M € - 2,3M €",   "salaire": 117, "contrat": 2030},
+    {"statut": "XI", "tag": "",    "note": 6.80, "nom": "Tochukwu Nnadi",      "age": 24, "poste": "MD, M (C)",       "nation": "Nigeria",    "niveau": 2.5, "potentiel": 2.5, "valeur": "2M € - 4,4M €",     "salaire": 46,  "contrat": 2030},
+    {"statut": "XI", "tag": "Trn", "note": 6.97, "nom": "Gérson",              "age": 30, "poste": "MD, M/MO…",       "nation": "Brésil",     "niveau": 3,   "potentiel": 3,   "valeur": "30M €",             "salaire": 500, "contrat": 2029},
+    {"statut": "XI", "tag": "Obs", "note": 7.28, "nom": "Lorenzo Bernasconi",  "age": 24, "poste": "D/AL/M (G)",      "nation": "Italie",     "niveau": 3,   "potentiel": 3.5, "valeur": "18M € - 20M €",     "salaire": 148, "contrat": 2031},
+    {"statut": "XI", "tag": "",    "note": 7.00, "nom": "Jayden Addai",        "age": 22, "poste": "M (D), MO…",      "nation": "Pays-Bas",   "niveau": 3,   "potentiel": 3.5, "valeur": "44M € - 56M €",     "salaire": 269, "contrat": 2031},
+    {"statut": "XI", "tag": "Bls", "note": 7.31, "nom": "Florian Thauvin",     "age": 34, "poste": "M (D), MO…",      "nation": "France",     "niveau": 3,   "potentiel": 3,   "valeur": "1,2M € - 1,9M €",   "salaire": 192, "contrat": 2029},
+    {"statut": "XI", "tag": "Prm", "note": 7.71, "nom": "Paulo Dybala",        "age": 34, "poste": "MO (DC), B…",     "nation": "Argentine",  "niveau": 3,   "potentiel": 3,   "valeur": "12,5M € - 15M €",   "salaire": 475, "contrat": 2028},
+    {"statut": "R1", "tag": "",    "note": 6.85, "nom": "Lorenzo Lucca",       "age": 27, "poste": "BT (C)",          "nation": "Italie",     "niveau": 3.5, "potentiel": 3.5, "valeur": "17M € - 20M €",     "salaire": 450, "contrat": 2031},
+    {"statut": "R2", "tag": "Trn", "note": 6.98, "nom": "Fikayo Tomori",       "age": 30, "poste": "D (C)",           "nation": "Angleterre", "niveau": 3,   "potentiel": 3,   "valeur": "7M €",              "salaire": 374, "contrat": 2030},
+    {"statut": "R3", "tag": "Lgu", "note": 6.71, "nom": "Morten Frendrup",     "age": 26, "poste": "MD, M (C)",       "nation": "Danemark",   "niveau": 3,   "potentiel": 3,   "valeur": "18M € - 23M €",     "salaire": 250, "contrat": 2032},
+    {"statut": "R4", "tag": "Obs", "note": 6.72, "nom": "Mao Hosoya",          "age": 26, "poste": "BT (C)",          "nation": "Japon",      "niveau": 2.5, "potentiel": 2.5, "valeur": "5,8M € - 6,4M €",   "salaire": 107, "contrat": 2031},
+    {"statut": "R5", "tag": "Trn", "note": 6.78, "nom": "Alejandro Balde",     "age": 24, "poste": "D/AL (G)",        "nation": "Espagne",    "niveau": 3.5, "potentiel": 4,   "valeur": "27M € - 38M €",     "salaire": 277, "contrat": 2028},
+    {"statut": "R6", "tag": "Trn", "note": 6.82, "nom": "Ethan Nwaneri",       "age": 20, "poste": "M (DC), M…",      "nation": "Angleterre", "niveau": 3.5, "potentiel": 5,   "valeur": "32M € - 39M €",     "salaire": 91,  "contrat": 2030},
+    {"statut": "R7", "tag": "Trn", "note": 6.75, "nom": "Julio Enciso",        "age": 23, "poste": "MO (DGC), …",     "nation": "Paraguay",   "niveau": 3.5, "potentiel": 4,   "valeur": "41M €",             "salaire": 180, "contrat": 2031},
+    {"statut": "R8", "tag": "Obs", "note": 7.26, "nom": "Timothy Weah",        "age": 27, "poste": "D/AL/M (D)…",     "nation": "États-Unis", "niveau": 3.5, "potentiel": 3.5, "valeur": "19,5M € - 24M €",   "salaire": 379, "contrat": 2030},
+    {"statut": "R9", "tag": "",    "note": 6.96, "nom": "Andy Diouf",          "age": 24, "poste": "AL (D), MD,…",    "nation": "France",     "niveau": 3.5, "potentiel": 4,   "valeur": "57M € - 63M €",     "salaire": 550, "contrat": 2032},
+    {"statut": "-",  "tag": "Obs", "note": 6.88, "nom": "Tomoki Hayakawa",     "age": 28, "poste": "GB",              "nation": "Japon",      "niveau": 3,   "potentiel": 3,   "valeur": "12,5M € - 15M €",   "salaire": 105, "contrat": 2030},
+    {"statut": "-",  "tag": "Bls", "note": 6.97, "nom": "Raúl Asencio",        "age": 24, "poste": "D (C)",           "nation": "Espagne",    "niveau": 3.5, "potentiel": 4,   "valeur": "40M € - 45M €",     "salaire": 349, "contrat": 2031, "indispo": true}
+  ]
+}

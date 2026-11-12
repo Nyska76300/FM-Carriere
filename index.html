@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ma carrière – Football Manager</title>
+<style>
+  :root { --c1:#1f8f4e; --c2:#f2c230; --fond:#0e1512; --carte:#16211c; --ligne:#24332b; --texte:#e8efe9; --doux:#93a89b; --rouge:#e5534b; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--fond); color:var(--texte); }
+  .wrap { max-width:1100px; margin:0 auto; padding:0 18px; }
+  header { padding:32px 0 26px; border-bottom:4px solid var(--c2);
+    background: repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 60px,transparent 60px 120px), linear-gradient(135deg,var(--c1),#0b3a22); }
+  .jeu { font-size:.78rem; letter-spacing:.15em; text-transform:uppercase; opacity:.85; }
+  h1 { margin:6px 0 4px; font-size:clamp(1.9rem,6vw,2.9rem); }
+  .sous { opacity:.85; font-size:.95rem; }
+  h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em; color:var(--c2); margin:34px 0 12px; }
+  .tuiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:22px; }
+  .tuile { background:var(--carte); border:1px solid var(--ligne); border-radius:12px; padding:14px 16px; }
+  .tuile b { display:block; font-size:1.6rem; font-variant-numeric:tabular-nums; }
+  .tuile span { color:var(--doux); font-size:.85rem; }
+  .onze { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; }
+  .joueur { background:var(--carte); border:1px solid var(--ligne); border-left:4px solid var(--c1); border-radius:10px; padding:10px 12px; }
+  .joueur .p { color:var(--doux); font-size:.8rem; }
+  .joueur .n { font-weight:600; margin:2px 0; }
+  .joueur .r { color:var(--c2); font-variant-numeric:tabular-nums; font-weight:600; }
+  .cartes { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
+  .carte { background:var(--carte); border:1px solid var(--ligne); border-radius:12px; padding:14px 16px; }
+  .carte h3 { margin:0 0 8px; font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--doux); }
+  .carte ol { list-style:none; margin:0; padding:0; }
+  .carte li { display:flex; justify-content:space-between; gap:10px; padding:7px 0; border-top:1px solid var(--ligne); }
+  .carte li:first-child { border-top:0; }
+  .carte li span:last-child { color:var(--c2); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .tag { display:inline-block; font-size:.72rem; font-weight:700; padding:1px 6px; border-radius:4px; background:#2c3d34; color:var(--texte); margin-left:6px; vertical-align:middle; }
+  .tag.Bls { background:var(--rouge); } .tag.Prm { background:#3fae5b; } .tag.Rep { background:#d9822b; }
+  input[type=search] { width:100%; max-width:320px; background:var(--carte); border:1px solid var(--ligne); color:var(--texte); padding:9px 12px; border-radius:8px; font:inherit; margin-bottom:10px; }
+  .tableau { overflow-x:auto; border:1px solid var(--ligne); border-radius:12px; }
+  table { border-collapse:collapse; width:100%; font-size:.88rem; }
+  th,td { padding:8px 10px; text-align:left; white-space:nowrap; border-bottom:1px solid var(--ligne); }
+  th { background:#1c2a23; cursor:pointer; user-select:none; position:sticky; top:0; }
+  th:hover { color:var(--c2); }
+  th.tri::after { content:" ▲"; color:var(--c2); } th.tri.desc::after { content:" ▼"; }
+  tbody tr:nth-child(even) { background:rgba(255,255,255,.02); }
+  tbody tr:hover { background:rgba(242,194,48,.08); }
+  .num { text-align:right; font-variant-numeric:tabular-nums; }
+  .etoiles { color:var(--c2); letter-spacing:1px; }
+  .bientot { color:var(--rouge); font-weight:600; }
+  footer { text-align:center; color:var(--doux); font-size:.85rem; padding:30px 18px; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="jeu" id="jeu"></div>
+  <h1 id="club"></h1>
+  <div class="sous" id="sous"></div>
+  <div class="tuiles" id="tuiles"></div>
+</div></header>
+
+<main class="wrap">
+  <h2>Onze titulaire</h2>
+  <div class="onze" id="onze"></div>
+
+  <h2>En un coup d'œil</h2>
+  <div class="cartes" id="cartes"></div>
+
+  <h2>Effectif complet</h2>
+  <input type="search" id="filtre" placeholder="Rechercher un joueur, un poste, un pays…">
+  <div class="tableau"><table id="table"><thead></thead><tbody></tbody></table></div>
+</main>
+<footer id="maj"></footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const el = (tag, txt, cls) => { const e = document.createElement(tag); if (txt !== undefined) e.textContent = txt; if (cls) e.className = cls; return e; };
+const fmt = (n, d = 2) => n.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
+const etoiles = n => '★'.repeat(Math.floor(n)) + (n % 1 ? '½' : '');
+const valeurMin = v => { const m = v.replace(/\s/g, '').match(/([\d,]+)([MK])/); if (!m) return 0; const x = parseFloat(m[1].replace(',', '.')); return m[2] === 'M' ? x * 1e6 : x * 1e3; };
+
+fetch('donnees.json?v=' + Date.now()).then(r => r.json()).then(D => {
+  const J = D.joueurs;
+  const anneeMin = Math.min(...J.map(j => j.contrat));
+  document.title = D.club + ' – ' + D.jeu;
+  $('jeu').textContent = D.jeu;
+  $('club').textContent = D.club;
+  $('sous').textContent = D.saison ? 'Saison ' + D.saison : '';
+  $('maj').textContent = 'Dernière mise à jour : ' + D.maj;
+
+  // Tuiles
+  const moy = a => a.reduce((s, x) => s + x, 0) / a.length;
+  const masse = J.reduce((s, j) => s + j.salaire, 0);
+  [[J.length, 'joueurs'],
+   [fmt(moy(J.map(j => j.age)), 1) + ' ans', 'âge moyen'],
+   [fmt(moy(J.map(j => j.note))), 'note moyenne'],
+   [fmt(masse / 1000, 1) + ' M€', 'masse salariale / mois']
+  ].forEach(([v, l]) => { const t = el('div', undefined, 'tuile'); t.append(el('b', v), el('span', l)); $('tuiles').append(t); });
+
+  // Onze
+  J.filter(j => j.statut === 'XI').forEach(j => {
+    const c = el('div', undefined, 'joueur');
+    const n = el('div', j.nom, 'n'); if (j.tag) n.append(el('span', j.tag, 'tag ' + j.tag));
+    c.append(el('div', j.poste, 'p'), n, el('div', fmt(j.note), 'r'));
+    $('onze').append(c);
+  });
+
+  // Cartes
+  const carte = (titre, liste, val) => {
+    const c = el('div', undefined, 'carte'); c.append(el('h3', titre));
+    const ol = el('ol');
+    liste.forEach(j => { const li = el('li'); li.append(el('span', j.nom), el('span', val(j))); ol.append(li); });
+    c.append(ol); $('cartes').append(c);
+  };
+  carte('Meilleures notes', [...J].sort((a, b) => b.note - a.note).slice(0, 5), j => fmt(j.note));
+  carte('Pépites (potentiel ≥ 4★)', J.filter(j => j.potentiel >= 4).sort((a, b) => b.potentiel - a.potentiel || a.age - b.age), j => j.age + ' ans · ' + etoiles(j.potentiel));
+  carte('Plus grosses valeurs', [...J].sort((a, b) => valeurMin(b.valeur) - valeurMin(a.valeur)).slice(0, 5), j => j.valeur);
+  carte('Contrats à surveiller', J.filter(j => j.contrat === anneeMin), j => 'fin juin ' + j.contrat);
+
+  // Tableau
+  const cols = [
+    ['Statut', 'statut'], ['Joueur', 'nom'], ['Note', 'note', 1], ['Âge', 'age', 1], ['Poste', 'poste'], ['Nation', 'nation'],
+    ['Niveau', 'niveau', 1], ['Potentiel', 'potentiel', 1], ['Valeur', 'valeur', 2], ['Salaire / mois', 'salaire', 1], ['Contrat', 'contrat', 1]
+  ];
+  let tri = null, desc = false;
+  const affiche = () => {
+    const f = $('filtre').value.trim().toLowerCase();
+    let L = J.filter(j => !f || [j.nom, j.poste, j.nation, j.tag].join(' ').toLowerCase().includes(f));
+    if (tri !== null) {
+      const [, k, t] = cols[tri];
+      L = [...L].sort((a, b) => { const x = t === 2 ? valeurMin(a[k]) : a[k], y = t === 2 ? valeurMin(b[k]) : b[k];
+        const r = typeof x === 'number' ? x - y : String(x).localeCompare(String(y), 'fr'); return desc ? -r : r; });
+    }
+    const th = $('table').tHead; th.innerHTML = ''; const tr = th.insertRow();
+    cols.forEach(([t, , n], i) => { const h = el('th', t, (n === 1 ? 'num' : '') + (i === tri ? ' tri' + (desc ? ' desc' : '') : ''));
+      h.onclick = () => { desc = tri === i ? !desc : true; tri = i; affiche(); }; tr.append(h); });
+    const tb = $('table').tBodies[0]; tb.innerHTML = '';
+    L.forEach(j => {
+      const r = tb.insertRow();
+      r.insertCell().textContent = j.statut === 'XI' ? 'Titulaire' : j.statut === '-' ? '—' : j.statut;
+      const nc = r.insertCell(); nc.textContent = j.nom; if (j.tag) nc.append(el('span', j.tag, 'tag ' + j.tag));
+      const c = (v, cls) => { const x = r.insertCell(); x.textContent = v; if (cls) x.className = cls; };
+      c(fmt(j.note), 'num'); c(j.age, 'num'); c(j.poste); c(j.nation);
+      c(etoiles(j.niveau), 'etoiles'); c(etoiles(j.potentiel), 'etoiles'); c(j.valeur);
+      c(j.salaire + ' K€', 'num'); c('30/6/' + j.contrat, 'num' + (j.contrat === anneeMin ? ' bientot' : ''));
+    });
+  };
+  $('filtre').oninput = affiche;
+  affiche();
+});
+</script>
+</body>
+</html>
