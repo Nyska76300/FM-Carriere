@@ -1,30 +1,596 @@
 {
-  "club": "Olympique de Marseille",
-  "saison": "2027/28",
-  "jeu": "Football Manager 27",
-  "maj": "12/11/2026",
-  "joueurs": [
-    {"statut": "XI", "tag": "",    "note": 6.91, "nom": "Marcin Bułka",        "age": 28, "poste": "GB",              "nation": "Pologne",    "niveau": 2.5, "potentiel": 2.5, "valeur": "3,4M € - 7,2M €",   "salaire": 334, "contrat": 2031},
-    {"statut": "XI", "tag": "",    "note": 6.88, "nom": "Tiago Gabriel",       "age": 22, "poste": "D (C)",           "nation": "Portugal",   "niveau": 3,   "potentiel": 4,   "valeur": "32M € - 41M €",     "salaire": 105, "contrat": 2032},
-    {"statut": "XI", "tag": "",    "note": 6.96, "nom": "Nayef Aguerd",        "age": 31, "poste": "D (C)",           "nation": "Maroc",      "niveau": 3,   "potentiel": 3,   "valeur": "9,4M € - 11M €",    "salaire": 409, "contrat": 2030},
-    {"statut": "XI", "tag": "",    "note": 7.08, "nom": "Jorge Herrando",      "age": 26, "poste": "D (C)",           "nation": "Espagne",    "niveau": 2.5, "potentiel": 3,   "valeur": "5,2M € - 7,2M €",   "salaire": 86,  "contrat": 2030},
-    {"statut": "XI", "tag": "Rep", "note": 6.73, "nom": "Íñigo Arguibide",     "age": 22, "poste": "D/AL/M/M…",       "nation": "Espagne",    "niveau": 2,   "potentiel": 2.5, "valeur": "1,1M € - 2,3M €",   "salaire": 117, "contrat": 2030},
-    {"statut": "XI", "tag": "",    "note": 6.80, "nom": "Tochukwu Nnadi",      "age": 24, "poste": "MD, M (C)",       "nation": "Nigeria",    "niveau": 2.5, "potentiel": 2.5, "valeur": "2M € - 4,4M €",     "salaire": 46,  "contrat": 2030},
-    {"statut": "XI", "tag": "Trn", "note": 6.97, "nom": "Gérson",              "age": 30, "poste": "MD, M/MO…",       "nation": "Brésil",     "niveau": 3,   "potentiel": 3,   "valeur": "30M €",             "salaire": 500, "contrat": 2029},
-    {"statut": "XI", "tag": "Obs", "note": 7.28, "nom": "Lorenzo Bernasconi",  "age": 24, "poste": "D/AL/M (G)",      "nation": "Italie",     "niveau": 3,   "potentiel": 3.5, "valeur": "18M € - 20M €",     "salaire": 148, "contrat": 2031},
-    {"statut": "XI", "tag": "",    "note": 7.00, "nom": "Jayden Addai",        "age": 22, "poste": "M (D), MO…",      "nation": "Pays-Bas",   "niveau": 3,   "potentiel": 3.5, "valeur": "44M € - 56M €",     "salaire": 269, "contrat": 2031},
-    {"statut": "XI", "tag": "Bls", "note": 7.31, "nom": "Florian Thauvin",     "age": 34, "poste": "M (D), MO…",      "nation": "France",     "niveau": 3,   "potentiel": 3,   "valeur": "1,2M € - 1,9M €",   "salaire": 192, "contrat": 2029},
-    {"statut": "XI", "tag": "Prm", "note": 7.71, "nom": "Paulo Dybala",        "age": 34, "poste": "MO (DC), B…",     "nation": "Argentine",  "niveau": 3,   "potentiel": 3,   "valeur": "12,5M € - 15M €",   "salaire": 475, "contrat": 2028},
-    {"statut": "R1", "tag": "",    "note": 6.85, "nom": "Lorenzo Lucca",       "age": 27, "poste": "BT (C)",          "nation": "Italie",     "niveau": 3.5, "potentiel": 3.5, "valeur": "17M € - 20M €",     "salaire": 450, "contrat": 2031},
-    {"statut": "R2", "tag": "Trn", "note": 6.98, "nom": "Fikayo Tomori",       "age": 30, "poste": "D (C)",           "nation": "Angleterre", "niveau": 3,   "potentiel": 3,   "valeur": "7M €",              "salaire": 374, "contrat": 2030},
-    {"statut": "R3", "tag": "Lgu", "note": 6.71, "nom": "Morten Frendrup",     "age": 26, "poste": "MD, M (C)",       "nation": "Danemark",   "niveau": 3,   "potentiel": 3,   "valeur": "18M € - 23M €",     "salaire": 250, "contrat": 2032},
-    {"statut": "R4", "tag": "Obs", "note": 6.72, "nom": "Mao Hosoya",          "age": 26, "poste": "BT (C)",          "nation": "Japon",      "niveau": 2.5, "potentiel": 2.5, "valeur": "5,8M € - 6,4M €",   "salaire": 107, "contrat": 2031},
-    {"statut": "R5", "tag": "Trn", "note": 6.78, "nom": "Alejandro Balde",     "age": 24, "poste": "D/AL (G)",        "nation": "Espagne",    "niveau": 3.5, "potentiel": 4,   "valeur": "27M € - 38M €",     "salaire": 277, "contrat": 2028},
-    {"statut": "R6", "tag": "Trn", "note": 6.82, "nom": "Ethan Nwaneri",       "age": 20, "poste": "M (DC), M…",      "nation": "Angleterre", "niveau": 3.5, "potentiel": 5,   "valeur": "32M € - 39M €",     "salaire": 91,  "contrat": 2030},
-    {"statut": "R7", "tag": "Trn", "note": 6.75, "nom": "Julio Enciso",        "age": 23, "poste": "MO (DGC), …",     "nation": "Paraguay",   "niveau": 3.5, "potentiel": 4,   "valeur": "41M €",             "salaire": 180, "contrat": 2031},
-    {"statut": "R8", "tag": "Obs", "note": 7.26, "nom": "Timothy Weah",        "age": 27, "poste": "D/AL/M (D)…",     "nation": "États-Unis", "niveau": 3.5, "potentiel": 3.5, "valeur": "19,5M € - 24M €",   "salaire": 379, "contrat": 2030},
-    {"statut": "R9", "tag": "",    "note": 6.96, "nom": "Andy Diouf",          "age": 24, "poste": "AL (D), MD,…",    "nation": "France",     "niveau": 3.5, "potentiel": 4,   "valeur": "57M € - 63M €",     "salaire": 550, "contrat": 2032},
-    {"statut": "-",  "tag": "Obs", "note": 6.88, "nom": "Tomoki Hayakawa",     "age": 28, "poste": "GB",              "nation": "Japon",      "niveau": 3,   "potentiel": 3,   "valeur": "12,5M € - 15M €",   "salaire": 105, "contrat": 2030},
-    {"statut": "-",  "tag": "Bls", "note": 6.97, "nom": "Raúl Asencio",        "age": 24, "poste": "D (C)",           "nation": "Espagne",    "niveau": 3.5, "potentiel": 4,   "valeur": "40M € - 45M €",     "salaire": 349, "contrat": 2031, "indispo": true}
+ "club": "Olympique de Marseille",
+ "saison": "2027/28",
+ "jeu": "Football Manager 27",
+ "maj": "20/12/2027 (date du jeu)",
+ "joueurs": [
+  {
+   "statut": "XI",
+   "tag": "",
+   "note": 6.91,
+   "nom": "Marcin Bułka",
+   "age": 28,
+   "poste": "GB",
+   "nation": "Pologne",
+   "niveau": 2.5,
+   "potentiel": 2.5,
+   "valeur": "3,4M € - 7,2M €",
+   "salaire": 334,
+   "contrat": 2031
+  },
+  {
+   "statut": "XI",
+   "tag": "",
+   "note": 6.88,
+   "nom": "Tiago Gabriel",
+   "age": 22,
+   "poste": "D (C)",
+   "nation": "Portugal",
+   "niveau": 3,
+   "potentiel": 4,
+   "valeur": "32M € - 41M €",
+   "salaire": 105,
+   "contrat": 2032
+  },
+  {
+   "statut": "XI",
+   "tag": "",
+   "note": 6.96,
+   "nom": "Nayef Aguerd",
+   "age": 31,
+   "poste": "D (C)",
+   "nation": "Maroc",
+   "niveau": 3,
+   "potentiel": 3,
+   "valeur": "9,4M € - 11M €",
+   "salaire": 409,
+   "contrat": 2030
+  },
+  {
+   "statut": "XI",
+   "tag": "",
+   "note": 7.08,
+   "nom": "Jorge Herrando",
+   "age": 26,
+   "poste": "D (C)",
+   "nation": "Espagne",
+   "niveau": 2.5,
+   "potentiel": 3,
+   "valeur": "5,2M € - 7,2M €",
+   "salaire": 86,
+   "contrat": 2030
+  },
+  {
+   "statut": "XI",
+   "tag": "Rep",
+   "note": 6.73,
+   "nom": "Íñigo Arguibide",
+   "age": 22,
+   "poste": "D/AL/M/M…",
+   "nation": "Espagne",
+   "niveau": 2,
+   "potentiel": 2.5,
+   "valeur": "1,1M € - 2,3M €",
+   "salaire": 117,
+   "contrat": 2030
+  },
+  {
+   "statut": "XI",
+   "tag": "",
+   "note": 6.8,
+   "nom": "Tochukwu Nnadi",
+   "age": 24,
+   "poste": "MD, M (C)",
+   "nation": "Nigeria",
+   "niveau": 2.5,
+   "potentiel": 2.5,
+   "valeur": "2M € - 4,4M €",
+   "salaire": 46,
+   "contrat": 2030
+  },
+  {
+   "statut": "XI",
+   "tag": "Trn",
+   "note": 6.97,
+   "nom": "Gérson",
+   "age": 30,
+   "poste": "MD, M/MO…",
+   "nation": "Brésil",
+   "niveau": 3,
+   "potentiel": 3,
+   "valeur": "30M €",
+   "salaire": 500,
+   "contrat": 2029
+  },
+  {
+   "statut": "XI",
+   "tag": "Obs",
+   "note": 7.28,
+   "nom": "Lorenzo Bernasconi",
+   "age": 24,
+   "poste": "D/AL/M (G)",
+   "nation": "Italie",
+   "niveau": 3,
+   "potentiel": 3.5,
+   "valeur": "18M € - 20M €",
+   "salaire": 148,
+   "contrat": 2031
+  },
+  {
+   "statut": "XI",
+   "tag": "",
+   "note": 7.0,
+   "nom": "Jayden Addai",
+   "age": 22,
+   "poste": "M (D), MO…",
+   "nation": "Pays-Bas",
+   "niveau": 3,
+   "potentiel": 3.5,
+   "valeur": "44M € - 56M €",
+   "salaire": 269,
+   "contrat": 2031
+  },
+  {
+   "statut": "XI",
+   "tag": "Bls",
+   "note": 7.31,
+   "nom": "Florian Thauvin",
+   "age": 34,
+   "poste": "M (D), MO…",
+   "nation": "France",
+   "niveau": 3,
+   "potentiel": 3,
+   "valeur": "1,2M € - 1,9M €",
+   "salaire": 192,
+   "contrat": 2029
+  },
+  {
+   "statut": "XI",
+   "tag": "Prm",
+   "note": 7.71,
+   "nom": "Paulo Dybala",
+   "age": 34,
+   "poste": "MO (DC), B…",
+   "nation": "Argentine",
+   "niveau": 3,
+   "potentiel": 3,
+   "valeur": "12,5M € - 15M €",
+   "salaire": 475,
+   "contrat": 2028
+  },
+  {
+   "statut": "R1",
+   "tag": "",
+   "note": 6.85,
+   "nom": "Lorenzo Lucca",
+   "age": 27,
+   "poste": "BT (C)",
+   "nation": "Italie",
+   "niveau": 3.5,
+   "potentiel": 3.5,
+   "valeur": "17M € - 20M €",
+   "salaire": 450,
+   "contrat": 2031
+  },
+  {
+   "statut": "R2",
+   "tag": "Trn",
+   "note": 6.98,
+   "nom": "Fikayo Tomori",
+   "age": 30,
+   "poste": "D (C)",
+   "nation": "Angleterre",
+   "niveau": 3,
+   "potentiel": 3,
+   "valeur": "7M €",
+   "salaire": 374,
+   "contrat": 2030
+  },
+  {
+   "statut": "R3",
+   "tag": "Lgu",
+   "note": 6.71,
+   "nom": "Morten Frendrup",
+   "age": 26,
+   "poste": "MD, M (C)",
+   "nation": "Danemark",
+   "niveau": 3,
+   "potentiel": 3,
+   "valeur": "18M € - 23M €",
+   "salaire": 250,
+   "contrat": 2032
+  },
+  {
+   "statut": "R4",
+   "tag": "Obs",
+   "note": 6.72,
+   "nom": "Mao Hosoya",
+   "age": 26,
+   "poste": "BT (C)",
+   "nation": "Japon",
+   "niveau": 2.5,
+   "potentiel": 2.5,
+   "valeur": "5,8M € - 6,4M €",
+   "salaire": 107,
+   "contrat": 2031
+  },
+  {
+   "statut": "R5",
+   "tag": "Trn",
+   "note": 6.78,
+   "nom": "Alejandro Balde",
+   "age": 24,
+   "poste": "D/AL (G)",
+   "nation": "Espagne",
+   "niveau": 3.5,
+   "potentiel": 4,
+   "valeur": "27M € - 38M €",
+   "salaire": 277,
+   "contrat": 2028
+  },
+  {
+   "statut": "R6",
+   "tag": "Trn",
+   "note": 6.82,
+   "nom": "Ethan Nwaneri",
+   "age": 20,
+   "poste": "M (DC), M…",
+   "nation": "Angleterre",
+   "niveau": 3.5,
+   "potentiel": 5,
+   "valeur": "32M € - 39M €",
+   "salaire": 91,
+   "contrat": 2030
+  },
+  {
+   "statut": "R7",
+   "tag": "Trn",
+   "note": 6.75,
+   "nom": "Julio Enciso",
+   "age": 23,
+   "poste": "MO (DGC), …",
+   "nation": "Paraguay",
+   "niveau": 3.5,
+   "potentiel": 4,
+   "valeur": "41M €",
+   "salaire": 180,
+   "contrat": 2031
+  },
+  {
+   "statut": "R8",
+   "tag": "Obs",
+   "note": 7.26,
+   "nom": "Timothy Weah",
+   "age": 27,
+   "poste": "D/AL/M (D)…",
+   "nation": "États-Unis",
+   "niveau": 3.5,
+   "potentiel": 3.5,
+   "valeur": "19,5M € - 24M €",
+   "salaire": 379,
+   "contrat": 2030
+  },
+  {
+   "statut": "R9",
+   "tag": "",
+   "note": 6.96,
+   "nom": "Andy Diouf",
+   "age": 24,
+   "poste": "AL (D), MD,…",
+   "nation": "France",
+   "niveau": 3.5,
+   "potentiel": 4,
+   "valeur": "57M € - 63M €",
+   "salaire": 550,
+   "contrat": 2032
+  },
+  {
+   "statut": "-",
+   "tag": "Obs",
+   "note": 6.88,
+   "nom": "Tomoki Hayakawa",
+   "age": 28,
+   "poste": "GB",
+   "nation": "Japon",
+   "niveau": 3,
+   "potentiel": 3,
+   "valeur": "12,5M € - 15M €",
+   "salaire": 105,
+   "contrat": 2030
+  },
+  {
+   "statut": "-",
+   "tag": "Bls",
+   "note": 6.97,
+   "nom": "Raúl Asencio",
+   "age": 24,
+   "poste": "D (C)",
+   "nation": "Espagne",
+   "niveau": 3.5,
+   "potentiel": 4,
+   "valeur": "40M € - 45M €",
+   "salaire": 349,
+   "contrat": 2031,
+   "indispo": true
+  },
+  {
+   "statut": "-",
+   "tag": "",
+   "note": 6.84,
+   "nom": "Paul Pogba",
+   "age": 34,
+   "poste": "MD, M/MO…",
+   "nation": "France",
+   "niveau": 2,
+   "potentiel": 2,
+   "valeur": "0 €",
+   "salaire": 180,
+   "contrat": 2028
+  },
+  {
+   "statut": "-",
+   "tag": "Bls",
+   "note": 7.18,
+   "nom": "Pedro Neto",
+   "age": 27,
+   "poste": "AL (DG), M…",
+   "nation": "Portugal",
+   "niveau": 3.5,
+   "potentiel": 3.5,
+   "valeur": "29M €",
+   "salaire": 757,
+   "contrat": 2032
+  }
+ ],
+ "tactique": "3-4-3 MD Jeu large",
+ "budget": {
+  "transferts_dispo": "63,01 M€",
+  "transferts_depenses": "124 M€",
+  "salaires_dispo": "934 K€ / mois",
+  "salaires_depenses": "8,14 M€ / mois"
+ },
+ "prochain": {
+  "adversaire": "Paris FC",
+  "lieu": "Extérieur",
+  "date": "1/1/28",
+  "competition": "Ligue 1",
+  "info": "15e de Ligue 1, joue en 4-2-3-1"
+ },
+ "classement": [
+  [
+   1,
+   "Paris Saint-Germain",
+   17,
+   15,
+   0,
+   34,
+   47
+  ],
+  [
+   2,
+   "Marseille",
+   17,
+   13,
+   3,
+   19,
+   40
+  ],
+  [
+   3,
+   "Lens",
+   17,
+   9,
+   4,
+   8,
+   31
+  ],
+  [
+   4,
+   "Lille",
+   17,
+   9,
+   4,
+   7,
+   31
+  ],
+  [
+   5,
+   "Auxerre",
+   17,
+   9,
+   5,
+   0,
+   30
+  ],
+  [
+   6,
+   "Nice",
+   17,
+   7,
+   4,
+   8,
+   27
+  ],
+  [
+   7,
+   "Monaco",
+   17,
+   8,
+   6,
+   2,
+   27
+  ],
+  [
+   8,
+   "Reims",
+   17,
+   7,
+   7,
+   1,
+   24
+  ],
+  [
+   9,
+   "Lorient",
+   17,
+   6,
+   6,
+   -5,
+   23
+  ],
+  [
+   10,
+   "Montpellier",
+   17,
+   7,
+   8,
+   -6,
+   23
+  ],
+  [
+   11,
+   "Lyon",
+   17,
+   5,
+   8,
+   -3,
+   19
+  ],
+  [
+   12,
+   "Saint-Étienne",
+   17,
+   4,
+   7,
+   -8,
+   18
+  ],
+  [
+   13,
+   "Brest",
+   17,
+   3,
+   7,
+   -10,
+   16
+  ],
+  [
+   14,
+   "Strasbourg",
+   17,
+   3,
+   8,
+   -5,
+   15
+  ],
+  [
+   15,
+   "Paris FC",
+   17,
+   3,
+   9,
+   -4,
+   14
+  ],
+  [
+   16,
+   "Le Havre",
+   17,
+   3,
+   9,
+   -11,
+   14
+  ],
+  [
+   17,
+   "Angers",
+   17,
+   4,
+   11,
+   -14,
+   14
+  ],
+  [
+   18,
+   "Rennes",
+   17,
+   2,
+   11,
+   -13,
+   10
   ]
+ ],
+ "resultats": [
+  [
+   "12/12/27",
+   "Lyon",
+   "E",
+   "0-1",
+   "V",
+   "Ligue 1"
+  ],
+  [
+   "16/12/27",
+   "RB Leipzig",
+   "E",
+   "2-1",
+   "D",
+   "Ligue Conférence"
+  ],
+  [
+   "19/12/27",
+   "Rumilly-Vallières",
+   "E",
+   "3-6",
+   "V",
+   "Coupe de France"
+  ]
+ ],
+ "calendrier": [
+  [
+   "1/1/28",
+   "Paris FC",
+   "E"
+  ],
+  [
+   "22/1/28",
+   "Angers",
+   "D"
+  ],
+  [
+   "30/1/28",
+   "Brest",
+   "E"
+  ],
+  [
+   "5/2/28",
+   "Strasbourg",
+   "E"
+  ],
+  [
+   "13/2/28",
+   "Lorient",
+   "D"
+  ],
+  [
+   "18/2/28",
+   "Paris Saint-Germain",
+   "E"
+  ],
+  [
+   "26/2/28",
+   "Rennes",
+   "D"
+  ],
+  [
+   "4/3/28",
+   "Lille",
+   "E"
+  ],
+  [
+   "12/3/28",
+   "Auxerre",
+   "D"
+  ]
+ ]
 }

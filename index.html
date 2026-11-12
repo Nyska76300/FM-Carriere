@@ -45,6 +45,16 @@
   .num { text-align:right; font-variant-numeric:tabular-nums; }
   .etoiles { color:var(--c2); letter-spacing:1px; }
   .bientot { color:var(--rouge); font-weight:600; }
+  .deux { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:12px; }
+  #classement th, #classement td { padding:7px 6px; }
+  .moi td { background:rgba(127,211,247,.14); font-weight:700; }
+  .res { display:inline-block; width:22px; text-align:center; border-radius:4px; font-weight:700; font-size:.78rem; padding:2px 0; margin-right:8px; }
+  .res.V { background:#3fae5b; } .res.D { background:var(--rouge); } .res.N { background:#7d8b99; }
+  .prochain b { font-size:1.25rem; display:block; margin:4px 0; }
+  .ligne { display:flex; justify-content:space-between; gap:10px; padding:7px 0; border-top:1px solid var(--ligne); }
+  .ligne:first-of-type { border-top:0; }
+  .ligne span:last-child { color:var(--doux); white-space:nowrap; }
+  .barre { height:8px; background:var(--ligne); border-radius:4px; margin:8px 0 14px; overflow:hidden; } .barre i { display:block; height:100%; background:var(--c1); }
   footer { text-align:center; color:var(--doux); font-size:.85rem; padding:30px 18px; }
 </style>
 </head>
@@ -57,6 +67,15 @@
 </div></header>
 
 <main class="wrap">
+  <h2>Ma saison</h2>
+  <div class="deux">
+    <div class="carte prochain" id="prochain"></div>
+    <div class="carte" id="resultats"><h3>Derniers résultats</h3></div>
+  </div>
+  <h2>Classement Ligue 1</h2>
+  <div class="tableau"><table id="classement"></table></div>
+  <h2>Calendrier</h2>
+  <div class="carte" id="calendrier"></div>
   <h2>Onze titulaire</h2>
   <div class="onze" id="onze"></div>
 
@@ -66,6 +85,9 @@
   <h2>Effectif complet</h2>
   <input type="search" id="filtre" placeholder="Rechercher un joueur, un poste, un pays…">
   <div class="tableau"><table id="table"><thead></thead><tbody></tbody></table></div>
+
+  <h2>Finances</h2>
+  <div class="deux" id="finances"></div>
 </main>
 <footer id="maj"></footer>
 
@@ -93,6 +115,33 @@ fetch('donnees.json?v=' + Date.now()).then(r => r.json()).then(D => {
    [fmt(moy(J.map(j => j.note))), 'note moyenne'],
    [fmt(masse / 1000, 1) + ' M€', 'masse salariale / mois']
   ].forEach(([v, l]) => { const t = el('div', undefined, 'tuile'); t.append(el('b', v), el('span', l)); $('tuiles').append(t); });
+
+
+  // Saison
+  const rang = (D.classement || []).find(c => c[1] === 'Marseille');
+  $('sous').textContent = [D.saison && 'Saison ' + D.saison, rang && rang[0] + 'e de Ligue 1', D.tactique].filter(Boolean).join(' · ');
+  if (rang) { const t = el('div', undefined, 'tuile'); t.append(el('b', rang[0] + 'e · ' + rang[6] + ' pts'), el('span', 'Ligue 1')); $('tuiles').prepend(t); }
+  if (D.prochain) {
+    const p = D.prochain, c = $('prochain');
+    c.append(el('h3', 'Prochain match'), el('b', p.adversaire), el('div', p.date + ' · ' + p.lieu + ' · ' + p.competition), el('div', p.info, 'p'));
+  }
+  (D.resultats || []).forEach(([dt, adv, lieu, sc, r, comp]) => {
+    const l = el('div', undefined, 'ligne'); const g = el('span'); g.append(el('span', r, 'res ' + r), document.createTextNode((lieu === 'D' ? 'vs ' : '@ ') + adv + '  ' + sc));
+    l.append(g, el('span', comp + ' · ' + dt)); $('resultats').append(l);
+  });
+  if (D.classement) {
+    const t = $('classement'); const hr = t.createTHead().insertRow();
+    ['#', 'Équipe', 'J', 'G', 'P', 'DB', 'Pts'].forEach((x, i) => hr.append(el('th', x, i > 1 ? 'num' : '')));
+    const b = t.createTBody();
+    D.classement.forEach(c => { const r = b.insertRow(); if (c[1] === 'Marseille') r.className = 'moi';
+      c.forEach((v, i) => { const x = r.insertCell(); x.textContent = (i === 5 && v > 0 ? '+' : '') + v; if (i !== 1) x.className = 'num'; }); });
+  }
+  (D.calendrier || []).forEach(([dt, adv, lieu]) => { const l = el('div', undefined, 'ligne'); l.append(el('span', (lieu === 'D' ? 'vs ' : '@ ') + adv), el('span', dt + (lieu === 'D' ? ' · Domicile' : ' · Extérieur'))); $('calendrier').append(l); });
+  if (D.budget) {
+    const B = D.budget;
+    [['Budget transferts', B.transferts_dispo, 'Dépensé cette saison : ' + B.transferts_depenses], ['Budget salarial disponible', B.salaires_dispo, 'Dépenses salariales : ' + B.salaires_depenses]]
+      .forEach(([t, v, s]) => { const c = el('div', undefined, 'carte'); const bb = el('b', v); bb.style.fontSize = '1.5rem'; c.append(el('h3', t), bb, el('div', s, 'p')); $('finances').append(c); });
+  }
 
   // Onze
   J.filter(j => j.statut === 'XI').forEach(j => {
